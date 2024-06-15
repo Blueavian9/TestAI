@@ -14,16 +14,13 @@ $(document).ready(function () {
     let selectedItem = data.find(item => {
       return item.name === selectedName;
     });
-    console.log("selectedItem", selectedItem);
+
     if (selectedItem) {
       $languageDropdown.append(
         $("<option></option>")
           .val(selectedItem.language_id)
           .text(selectedItem.language_id)
       );
-      console.log("appending");
-    } else {
-      console.log("not appending");
     }
   }
 
@@ -33,7 +30,6 @@ $(document).ready(function () {
 
   $("#nameDropdown").change(function() {
     let selectedName = $(this).val();
-    console.log("updating");
     updateLanguageDropdown(selectedName);
   });
 });
