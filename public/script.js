@@ -31,7 +31,7 @@ $(document).ready(function () {
 
   updateLanguageDropdown($("#nameDropdown").val());
 
-  $("#nameDropdown").change(() => {
+  $("#nameDropdown").change(function() {
     let selectedName = $(this).val();
     console.log("updating");
     updateLanguageDropdown(selectedName);
