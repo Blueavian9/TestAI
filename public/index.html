@@ -8,6 +8,12 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="data.js" module></script>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/font-awesome.min.css">
+    <!-- To display Font Awesome Icons -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- To display Bootstrap Icons -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <!-- To display Google Icons -->
     <link rel="stylesheet" href="styles.css">
     <title>Text2Speech APP</title>
 </head>
@@ -16,22 +22,29 @@
     <header>
         <div class="container">
             <div class="brand">
-                <h1>Text2<span>Speech</span></h1>
+                <h1>Text2<span>Speech Education</span></h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Other</a></li>
-                </ul>
+            <nav class="navbar">
+                <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <a href="#about"><i class="glyphicon glyphicon-user"></i> About</a></li>
+                <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <a href="#other"><i class="material-icons"></i> Other</a></li>
             </nav>
         </div>
     </header>
+    <br>
+    <br>
     <section class="hero">
         <div class="container">
             <div class="heroContent">
-                <h1>Text 2 Speech</h1>
+                <div id="container">
+                </div>
+                <img src="https://media.istockphoto.com/id/586379236/photo/best-friends-from-the-school.jpg?s=612x612&w=0&k=20&c=0FkiLaFa6Uhq_AsT6u6qgDR8vRliMilWMxYaZjvmtSI="
+                    alt="best-friends-from-the-school">
+                <br><br><br>
+                <h1>
+                    <bold>Summary</bold>
+                </h1>
                 <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore perferendis alias dicta minus
                     accusamus voluptatibus quis ut at animi doloribus totam adipisci, dolores, quisquam vel expedita
@@ -46,24 +59,34 @@
                     corrupti officia soluta, voluptatum possimus iure ad expedita ex eveniet odit reiciendis laudantium
                     mollitia quod excepturi.
                 </p>
-                <div class="button">Join Us</div>
+
+                <div class="btn">Join Us: </div>
             </div>
         </div>
     </section>
     <main>
         <div class="container">
-
             <div class="form">
                 <label for="nameDropdown">Choose a Person to Speak</label>
                 <select id="nameDropdown" name="nameDropdown"></select>
-
+                <br>
                 <label for="languageDropdown">Language</label>
                 <select id="languageDropdown" name="languageDropdown"></select>
-
+                <br><br><br>
                 <h2>Enter Text</h2>
                 <textarea name="audioText" id="audioText"></textarea>
-                <button class="button" id="submit" onClick="handleSubmit()">Submit</button>
-                <audio src="" id="audio" controls></audio>
+
+                <button class="submitButton" id="submit"
+                    onClick="handleSubmit()"><span>Submit</span><span>Submit</span></button>
+                <br><br><br>
+
+                <!-- <audio src="" id="audio" controls></audio> -->
+
+                <audio controls>
+                    <source src="horse.ogg" type="audio/ogg">
+                    <source src="horse.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
         </div>
     </main>

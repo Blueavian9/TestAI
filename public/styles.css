@@ -1,6 +1,341 @@
+/* Reset and base styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation bar styles */
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #ff9800;
+}
+
+.navbar a.active {
+    background-color: #e68a00;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero section styles */
+.hero {
+    background: url('https://media.istockphoto.com/id/586379236/photo/best-friends-from-the-school.jpg?s=612x612&w=0&k=20&c=0FkiLaFa6Uhq_AsT6u6qgDR8vRliMilWMxYaZjvmtSI=') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: static;
+}
+
+.hero::before {
+    content: '';
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
+}
+
+.heroContent h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.heroContent p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.heroContent .btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.heroContent .btn:hover {
+    background-color: #218838;
+}
+
+/* Form section styles */
+main .container {
+    padding: 40px 0;
+}
+
+main .form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main .form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+main .form select,
+main .form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+main .form textarea {
+    height: 100px;
+}
+
+main .form .submitButton {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 10px 20px;
+    position: static;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 7px grey;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+main .form .submitButton:hover {
+    background-color: #0056b3;
+}
+
+main .form audio {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* 12 */
+.submitButton {
+    top: 15px;
+    /* right: 20px; */
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    border: none;
+    box-shadow: none;
+    position: fixed;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    -webkit-perspective: 230px;
+    perspective: 230px;
+}
+
+.submitButton span {
+    background: rgb(0, 172, 238);
+    background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+    display: block;
+    /* position: absolute; */
+    position: fixed;
+    width: 130px;
+    height: 40px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    margin: 0;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.submitButton span:nth-child(1) {
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+}
+
+.submitButton span:nth-child(2) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+}
+
+.submitButton:hover span:nth-child(1) {
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+.submitButton:hover span:nth-child(2) {
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    color: transparent;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+}
+
+/* Image styles */
+#container,
+#container img {
+    display: inline-block;
+    position: fixed;
+    border-radius: 25px;
+    margin: 25px;
+    box-shadow: 5px 5px 7px grey;
+    max-width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .navbar a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    main .form {
+        padding: 10px;
+    }
+}
+
+/* Basic reset and layout adjustments */
+audio {
+    width: 100%;
+    /* Makes the audio player take the full width of its container */
+    max-width: 600px;
+    /* Sets a max width */
+    height: 50px;
+    /* Sets a height for consistency */
+    margin: 20px auto;
+    /* Centers the audio player */
+    display: block;
+    /* Ensures the audio player is displayed as a block-level element */
+}
+
+/* Style the audio player controls */
+audio::-webkit-media-controls-panel {
+    background-color: #f8f9fa;
+    /* Light background for controls */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 5px;
+    /* Space around controls */
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-volume-slider {
+    filter: invert(0.5);
+    /* Slight color inversion for a custom look */
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button {
+    background-color: #007bff;
+    /* Custom play/pause button color */
+    border-radius: 50%;
+    /* Round buttons */
+    padding: 5px;
+    /* Space around icon */
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: #dc3545;
+    /* Custom mute button color */
+    border-radius: 50%;
+    /* Round button */
+    padding: 5px;
+    /* Space around icon */
+}
+
+/* Optional: Add some hover effects for better interactivity */
+audio::-webkit-media-controls-play-button:hover,
+audio::-webkit-media-controls-pause-button:hover,
+audio::-webkit-media-controls-mute-button:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+}
+
+/* Firefox-specific styling */
+audio {
+    background-color: #f8f9fa;
+    /* Light background for controls */
+    border: 1px solid #ccc;
+    /* Border around the audio player */
+    border-radius: 10px;
+    /* Rounded corners */
+    padding: 5px;
+    /* Space around controls */
 }
