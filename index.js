@@ -16,5 +16,3 @@ app.post("/api/submit", (req, res) => {
 app.listen(port, () =>
   console.log(`server running on http://localhost:${port}`)
 );
-
-document.getElementById('submitButton').addEventListener('click', handleSubmit);

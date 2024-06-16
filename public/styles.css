@@ -7,13 +7,13 @@
 }
 
 /* Navigation bar styles */
-.navbar {
+header .navbar {
     width: 100%;
     background-color: #555;
     overflow: auto;
 }
 
-.navbar a {
+header .navbar a {
     float: left;
     text-align: center;
     padding: 12px;
@@ -22,11 +22,11 @@
     font-size: 17px;
 }
 
-.navbar a:hover {
+header .navbar a:hover {
     background-color: #ff9800;
 }
 
-.navbar a.active {
+header .navbar a.active {
     background-color: #e68a00;
 }
 
@@ -45,15 +45,16 @@
 }
 
 /* Hero section styles */
-.hero {
-    background: url('https://media.istockphoto.com/id/586379236/photo/best-friends-from-the-school.jpg?s=612x612&w=0&k=20&c=0FkiLaFa6Uhq_AsT6u6qgDR8vRliMilWMxYaZjvmtSI=') no-repeat center center/cover;
+section .hero {
+    /* background: url('https://media.istockphoto.com/id/586379236/photo/best-friends-from-the-school.jpg?s=612x612&w=0&k=20&c=0FkiLaFa6Uhq_AsT6u6qgDR8vRliMilWMxYaZjvmtSI=') no-repeat center center/cover; */
     color: white;
     text-align: center;
-    padding: 100px 20px;
-    position: static;
+    padding: 50px 20px;
+    /* padding: 100px 20px; */
+    position: relative;
 }
 
-.hero::before {
+section .hero::before {
     content: '';
     position: static;
     top: 0;
@@ -63,36 +64,40 @@
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.heroContent {
+section .heroContent {
     position: relative;
     z-index: 1;
 }
 
-.heroContent h1 {
+section .heroContent h1 {
     font-size: 3em;
     margin-bottom: 20px;
 }
 
-.heroContent p {
+section .heroContent p {
     font-size: 1.2em;
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.heroContent .btn {
+section .heroContent .btn {
     display: inline-block;
     background-color: #28a745;
     color: white;
+    position: static;
+    align-items: center;
+    justify-content: center;
     padding: 14px 28px;
     border-radius: 25px;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
+    cursor: pointer;
 }
 
-.heroContent .btn:hover {
+section .heroContent .btn:hover {
     background-color: #218838;
 }
 
@@ -133,26 +138,25 @@ main .form .submitButton {
     background-color: #007BFF;
     color: #ffffff;
     padding: 10px 20px;
-    position: static;
     margin: auto;
     border: none;
     border-radius: 5px;
     box-shadow: 5px 5px 7px grey;
     cursor: pointer;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: static;
 }
 
 main .form .submitButton:hover {
-    background-color: #0056b3;
-}
-
-main .form audio {
-    width: 100%;
-    margin-top: 20px;
+    /* background-color: #0056b3; */
+    background-color: #007BFF;
 }
 
 
-/* 12 */
+/* submitButton  */
 .submitButton {
     top: 15px;
     /* right: 20px; */
@@ -161,7 +165,7 @@ main .form audio {
     left: 15px;
     border: none;
     box-shadow: none;
-    position: fixed;
+    position: absolute;
     width: 130px;
     height: 40px;
     line-height: 42px;
@@ -169,100 +173,75 @@ main .form audio {
     perspective: 230px;
 }
 
-.submitButton span {
-    background: rgb(0, 172, 238);
-    background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+main .form .submitButton span {
+    position: absolute;
     display: block;
-    /* position: absolute; */
-    position: fixed;
     width: 130px;
+    text-align: center;
+    transition: all .3s;
+    /* background: rgb(0, 172, 238);
+    background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
     height: 40px;
     box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-        7px 7px 20px 0px rgba(0, 0, 0, .1),
-        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
     border-radius: 5px;
     margin: 0;
-    text-align: center;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-transition: all .3s;
-    transition: all .3s;
+    -webkit-transition: all .3s; */
 }
 
-.submitButton span:nth-child(1) {
+main .form .submitButton span:nth-child(1) {
+    transform: rotateX(90deg);
+    transform-origin: center-bottom;
+    /* transform-origin: 50% 50% -20%;
     box-shadow:
-        -7px -7px 20px 0px #fff9,
-        -4px -4px 5px 0px #fff9,
-        7px 7px 20px 0px #0002,
-        4px 4px 5px 0px #0001;
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
     -webkit-transform: rotateX(90deg);
     -moz-transform: rotateX(90deg);
-    transform: rotateX(90deg);
     -webkit-transform-origin: 50% 50% -20px;
-    -moz-transform-origin: 50% 50% -20px;
-    transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px; */
 }
 
-.submitButton span:nth-child(2) {
+main .form .submitButton span:nth-child(2) {
+    transform: rotateX(0deg);
+    transform-origin: center-bottom;
+    /* transform-origin: 50% 50% -20px;
     -webkit-transform: rotateX(0deg);
     -moz-transform: rotateX(0deg);
-    transform: rotateX(0deg);
     -webkit-transform-origin: 50% 50% -20px;
-    -moz-transform-origin: 50% 50% -20px;
-    transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px; */
 }
 
-.submitButton:hover span:nth-child(1) {
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-        7px 7px 20px 0px rgba(0, 0, 0, .1),
-        4px 4px 5px 0px rgba(0, 0, 0, .1);
-    -webkit-transform: rotateX(0deg);
-    -moz-transform: rotateX(0deg);
+main .form .submitButton:hover span:nth-child(1) {
     transform: rotateX(0deg);
+    /* box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg); */
 }
 
-.submitButton:hover span:nth-child(2) {
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-        7px 7px 20px 0px rgba(0, 0, 0, .1),
-        4px 4px 5px 0px rgba(0, 0, 0, .1);
+main .form .submitButton:hover span:nth-child(2) {
+    transform: rotateX(-90deg);
+    /* box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
     color: transparent;
     -webkit-transform: rotateX(-90deg);
-    -moz-transform: rotateX(-90deg);
-    transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg); */
 }
 
-/* Image styles */
-#container,
-#container img {
-    display: inline-block;
-    position: fixed;
-    border-radius: 25px;
-    margin: 25px;
-    box-shadow: 5px 5px 7px grey;
-    max-width: 100%;
+main .form audio {
+    width: 100%;
+    margin-top: 20px;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header .navbar a {
-        display: block;
-        margin: 5px 0;
-    }
-
-    .hero {
-        padding: 50px 20px;
-    }
-
-    main .form {
-        padding: 10px;
-    }
-}
 
 /* Basic reset and layout adjustments */
 audio {
@@ -338,4 +317,36 @@ audio {
     /* Rounded corners */
     padding: 5px;
     /* Space around controls */
+}
+
+/* Image styles */
+#container,
+#container img {
+    display: inline-block;
+    position: fixed;
+    border-radius: 25px;
+    margin: 25px;
+    box-shadow: 5px 5px 7px grey;
+    max-width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .navbar a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    main .form {
+        padding: 10px;
+    }
 }
