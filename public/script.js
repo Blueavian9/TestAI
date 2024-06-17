@@ -44,15 +44,24 @@ $(document).ready(function () {
     e.preventDefault();
 
 
-    const data = {
+    const requestData = {
       voice: voiceSelect.value,
       audioText: textInput.value,
     }
 
-    axios.post("http://localhost:3333/api/synthesize.");
+  try {
+
+  const response = await  axios.post("http://localhost:3333/api/synthesize", requestData);
+  console.log(response.data); 
+  // Handle success response
+  // Assuming the response contains a URL to the generated audio
+    audioElement.src = response.data.audioUrl;
+    audioElement.play();
+  } catch (error) {
+    console.log(error); 
+    // Handle error
+    }
   });
-
-
 });
 
 
