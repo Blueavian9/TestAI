@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="data.js" module></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <title>Text2Speech APP</title>
 </head>
@@ -41,13 +43,16 @@
         <section class="form-section">
             <div class="container">
                 <div class="form">
-                    <label for="nameDropdown">Choose a Person to Speak</label>
-                    <select id="nameDropdown" name="nameDropdown"></select>
-                    <label for="languageDropdown">Language</label>
-                    <select id="languageDropdown" name="languageDropdown"></select>
-                    <h2>Enter Text</h2>
-                    <textarea name="audioText" id="audioText"></textarea>
-                    <button class="custom-btn btn-12" id="submitButton">Submit</button>
+                    <form id="textform">
+                        <label for="nameDropdown">Choose a Person to Speak</label>
+                        <select id="nameDropdown" name="nameDropdown"></select>
+                        <label for="languageDropdown">Language</label>
+                        <select id="languageDropdown" name="languageDropdown"></select>
+                        <h2>Enter Text</h2>
+                        <textarea name="audioText" id="audioText"></textarea>
+                        <button class="custom-btn btn-12" type="submit" id="submitButton">Submit</button>
+                    </form>
+                    <br>
                     <audio id="audio" controls>
                         <source src="" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -56,8 +61,6 @@
             </div>
         </section>
     </main>
-
-    <script src="script.js"></script>
 </body>
 
 </html>

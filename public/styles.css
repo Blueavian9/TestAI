@@ -20,8 +20,24 @@ header {
     padding: 10px 0;
 }
 
+header {
+    background-color: #555;
+    color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 .brand h1 {
     font-size: 24px;
+    margin: 0;
 }
 
 .brand span {
@@ -29,6 +45,11 @@ header {
 }
 
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
     margin-top: 10px;
 }
 
@@ -41,6 +62,25 @@ header {
 
 .navbar a:hover {
     color: #ff9800;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+    }
+
+    .navbar a {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
 
 /* Hero section styles */
@@ -120,11 +160,11 @@ header {
 .custom-btn {
     width: 130px;
     height: 40px;
-    color: #fff;
+    color: #ffffff;
     border-radius: 5px;
     padding: 10px 25px;
     font-weight: 500;
-    background: transparent;
+    background: blue;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -135,7 +175,7 @@ header {
     outline: none;
 }
 
-.btn-12 {
+custom-btn .btn-12 {
     position: relative;
     border: none;
     box-shadow: none;
@@ -145,7 +185,7 @@ header {
     perspective: 230px;
 }
 
-.btn-12 span {
+custom-btn .btn-12 span {
     background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
     display: block;
     position: absolute;
@@ -161,7 +201,7 @@ header {
     transition: all .3s;
 }
 
-.btn-12 span:nth-child(1) {
+custom-btn .btn-12 span:nth-child(1) {
     box-shadow:
         -7px -7px 20px 0px #fff9,
         -4px -4px 5px 0px #fff9,
@@ -171,19 +211,19 @@ header {
     transform-origin: 50% 50% -20px;
 }
 
-.btn-12 span:nth-child(2) {
+custom-btn .btn-12 span:nth-child(2) {
     transform: rotateX(0deg);
     transform-origin: 50% 50% -20px;
 }
 
-.btn-12:hover span:nth-child(1) {
+custom-btn .btn-12:hover span:nth-child(1) {
     box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
         7px 7px 20px 0px rgba(0, 0, 0, .1),
         4px 4px 5px 0px rgba(0, 0, 0, .1);
     transform: rotateX(0deg);
 }
 
-.btn-12:hover span:nth-child(2) {
+custom-btn .btn-12:hover span:nth-child(2) {
     box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
         7px 7px 20px 0px rgba(0, 0, 0, .1),
         4px 4px 5px 0px rgba(0, 0, 0, .1);
